@@ -21,7 +21,11 @@
  <p >{{ filteredList.length }}</p>
  
   <p> 
+<select>
 
+  <option v-for="post in filteredList">{{ post.txt_color }}</option>
+
+  </select>
   
    </p>
 
@@ -32,7 +36,7 @@
         
         <p>Code: {{ post.sku }}</p>
 		 <div v-for="v in post.variants">
-                                            <div class="color-code-list">{{ v.name }}</div>
+                                            <div class="color-code-list">Color : {{ v.name }}</div>
                                         </div>
 		<p>Name : {{ post.name }}</p>
 		
