@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Vue search filter</title>
+  <link rel="stylesheet" href="./style.css">
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.9/vue.min.js'></script>
+<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js"></script>
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div id="app" >
+  <div class="search-wrapper">
+    <input type="text" v-model="ksearch" placeholder="Search title.."/>
+        
+  </div>
+ <p >{{ filteredList.length }}</p>
+ 
+  <p> 
+
+  
+   </p>
+
+  
+  <div class="wrapper">
+    <div class="card" v-for="post in filteredList">
+      <a v-bind:href="post.product_url" target="_blank">
+        
+        <p>Code: {{ post.sku }}</p>
+		 <div v-for="v in post.variants">
+                                            <div class="color-code-list">{{ v.name }}</div>
+                                        </div>
+		<p>Name : {{ post.name }}</p>
+		
+		
+      </a>
+    </div>
+  </div>
+</div>
+
+  
+  
+  <script  src="./script_axios.js"></script>
+  
+
+</body>
+</html>
